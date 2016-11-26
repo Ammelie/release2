@@ -1,0 +1,295 @@
+/************* ALL PAGES *************/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 1rem;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+
+li {
+	list-style-type: none;
+}
+
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.content {
+	padding: 2rem;
+}
+
+.content a:hover {
+	color: black;
+}
+
+@media all and (min-width: 650px) {
+	.wrapper {
+		height: 90vh;
+	}
+}
+
+
+/************* FONT THINGS *************/
+
+h1 {
+	font-size: 4rem !important;
+}
+
+h2 {
+	font-size: 2rem !important;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.bold-header {
+	font-family: 'Share Tech Mono', sans-serif;
+	padding: 1rem;
+}
+
+.countdown p {
+	font-size: 1.7rem;
+}
+
+
+
+/************* BACKGROUND COLORS *************/
+
+/* light background */
+.index-content, .portrait, .trivia, .expand:hover {
+	background-color: #aacfd0;
+}
+
+/* dark background */
+.bold-header, .expand {
+	background-color: #79a8a9;
+}
+
+
+
+/************* MENU & FOOTER *************/
+
+nav, footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 5vh;
+	min-height: 1.7rem;
+	background-color: #1f4e5f;
+}
+
+footer {
+	padding: 1rem;
+	position: fixed;
+	width: 100vw;
+	bottom: 0;
+}
+
+.menu-item {
+	padding: 1rem;
+}
+
+.menu-item a {
+	font-weight: normal;
+}
+
+.menu-item a:hover {
+	font-size: 1.2rem;
+}
+
+footer p {
+	font-size: 0.8rem;
+	color: white;
+}
+
+@media all and (min-width: 650px) {
+
+}
+
+
+
+/************* INDEX *************/
+
+.left, .right {
+	width: 100vw;
+}
+
+.left > *, .right > * {
+	padding: 1rem;
+}
+
+/* SHARE BUTTONS from https://simplesharingbuttons.com */
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons .sr-only {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+@media all and (min-width: 650px) {
+	.index-header, .index-content {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.left {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
+	.right {
+		display: flex;
+		align-items: center;
+		flex: 1;
+	}
+
+	.countdown {
+		flex: 1;
+		padding: 2rem;
+	}
+}
+
+
+
+/************* ABOUT *************/
+
+.about-wrapper > * {
+	width: 100vw;
+}
+
+.about-content *, .trivia * {
+	text-align: left;
+}
+
+.about-content a {
+	color: #79a8a9;
+}
+
+.portrait {
+	padding: 1rem;
+}
+
+.portrait img {
+	width: 200px;
+	border-radius: 100%;
+	height: auto;
+	position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+@media all and (min-width: 770px) {
+	.about-wrapper {
+		width: 100vw;
+	}
+
+	.about-header {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.portrait {
+		width: 60vw;
+	}
+
+	.about-content {
+		order: 1;
+		width: 60vw;
+	}
+
+	.about-content * {
+		width: auto;
+	}
+
+	.trivia {
+		width: 40vw;
+	}
+}
+
+
+
+/************* RESUME *************/
+.resume-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.resume-header {
+	width: 100vw;
+}
+
+.resume-content {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+}
+
+.narrow {
+	padding: 2rem;
+}
+
+.narrow * {
+	text-align: left;
+}
+
+.narrow li {
+	list-style: disc;
+}
+
+.expand {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0.5rem;
+}
+
+.location {
+	margin-top: 0.5rem;
+	text-align: right;
+}
+
+.description {
+	display: none;
+	padding: 0.5rem;
+}
+
+@media all and (min-width: 650px) {
+.resume-header {
+	 display: flex;
+	 flex: 1;
+	 flex-direction: column;
+	 justify-content: center;
+ }
+
+ .narrow {
+	 width: 60%;
+ }
+}
