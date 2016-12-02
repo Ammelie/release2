@@ -1,13 +1,10 @@
 var liaDate = new Date("2018-01-15");
 var graduationDate = new Date("2018-05-31");
 
-window.onload = addTimers;
-
-
 
 // Runs calculate for both dates and places the resulting timers on the index page
 
-function addTimers() {
+$(document).ready(function addTimers() {
   var now = new Date();
 
   var timeToLIA = calculate(liaDate, now);
@@ -17,7 +14,7 @@ function addTimers() {
   document.getElementById("graduation").innerHTML = timeToGraduation;
 
   setTimeout(addTimers, 3600000);
-}
+});
 
 
 
