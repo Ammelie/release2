@@ -176,6 +176,52 @@ ul.share-buttons .sr-only {
 }
 
 
+/************* GAME *************/
+
+.dark-overlay {
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	height: 100vh;
+	width: 100vw;
+	z-index: 1;
+	display: none;
+}
+
+.game-window {
+	background: white;
+	height: 80vh;
+	width: 50vw;
+	z-index: 1;
+	display: none;
+	flex-direction: column;
+}
+
+.word {
+	background: plum;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+.guessed-letters {
+	background: powderblue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+.gallows {
+	background: lightgreen;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 4;
+}
+
 
 /************* ABOUT *************/
 
