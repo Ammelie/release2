@@ -19,7 +19,7 @@
         <br />
         <p>
           If you or someone you know are looking for someone matching my
-          profile—especially if you&#39;d like an extra hand before summer in 2018—please don&#39;t hesitate to <a href="mailto:ammelieneth@student.kyh.se">
+          profile—especially if you&#39;d like an extra hand before summer in 2018—please don&#39;t hesitate to <a href="?page=contact.php">
           get in touch</a>! I&#39;d be happy to answer any questions you might have.
         </p>
       </article>

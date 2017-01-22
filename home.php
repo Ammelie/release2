@@ -13,7 +13,7 @@
           <div class="wrong-guesses" id="wrong-guesses"></div>
         </div>
       </div>
-      
+
       <div class="left">
         <header class="index-header bold-header">
           <h1>Ammelie Neth</h1>
@@ -24,7 +24,7 @@
           <p>
             My name is Ammelie, and this page is both an ongoing assignment for my 2 year long front end development program,
             as well as a small introduction to my work. Please go on to check out my resume or
-            <a href="mailto:ammelieneth@student.kyh.se">send me an email</a> to say hi!
+            <a href="?page=contact.php">send me a message</a> to say hi!
           </p>
           <br />
           <p>

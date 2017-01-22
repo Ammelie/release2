@@ -14,6 +14,9 @@
           case 'resume.php':
             $page = 'resume.php';
             break;
+          case 'contact.php':
+            $page = 'contact.php';
+            break;
           default:
             $page = 'home.php';
             break;
@@ -27,13 +30,13 @@
 
       if(isset($_GET['page'])) {
         switch ($_GET['page']) {
-          case 'about.php':
+          case 'home.php':
+            echo '<script type="text/javascript" src="scripts/countdown.js"></script> <script type="text/javascript" src="scripts/hangman.js"></script>';
             break;
           case 'resume.php':
-          echo '<script type="text/javascript" src="scripts/expand-experience.js"></script>';
+            echo '<script type="text/javascript" src="scripts/expand-experience.js"></script>';
             break;
           default:
-            echo '<script type="text/javascript" src="scripts/countdown.js"></script> <script type="text/javascript" src="scripts/hangman.js"></script>';
             break;
         }
       } else {
