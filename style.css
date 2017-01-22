@@ -240,14 +240,11 @@ ul.share-buttons .sr-only {
 	color: #79a8a9;
 }
 
-/*.portrait {
+.video {
 	padding: 1rem;
-}*/
+}
 
 .video iframe {
-	/*width: 200px;
-	border-radius: 100%;
-	height: auto;*/
 	position: relative;
   top: 50%;
   transform: perspective(1px) translateY(-50%);
