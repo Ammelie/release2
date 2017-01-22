@@ -5,7 +5,7 @@
       <header class="about-header bold-header">
         <h1>About me</h1>
       </header>
-      <div class="portrait"><img src="images/portrait.jpg" alt="Photo of Ammelie Neth"></div>
+      <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/6WcRtA1795w" frameborder="0"></iframe></div>
       <article class="content about-content">
         <p>
           For a few years now, I&#39;ve been trying out various educations and jobs in the intersection between technology and language.
@@ -43,5 +43,5 @@
       </article>
     </div>
   ';
-  
+
 ?>

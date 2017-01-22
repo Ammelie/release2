@@ -67,7 +67,7 @@ body {
 /************* BACKGROUND COLORS *************/
 
 /* light background */
-.index-content, .portrait, .trivia, .description {
+.index-content, .video, .trivia, .description {
 	background-color: #aacfd0;
 }
 
@@ -240,14 +240,14 @@ ul.share-buttons .sr-only {
 	color: #79a8a9;
 }
 
-.portrait {
+/*.portrait {
 	padding: 1rem;
-}
+}*/
 
-.portrait img {
-	width: 200px;
+.video iframe {
+	/*width: 200px;
 	border-radius: 100%;
-	height: auto;
+	height: auto;*/
 	position: relative;
   top: 50%;
   transform: perspective(1px) translateY(-50%);
@@ -265,7 +265,7 @@ ul.share-buttons .sr-only {
 		justify-content: center;
 	}
 
-	.portrait {
+	.video {
 		width: 60vw;
 	}
 
