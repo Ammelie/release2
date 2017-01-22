@@ -38,6 +38,7 @@ li {
 }
 
 
+
 /************* FONT THINGS *************/
 
 h1 {
@@ -52,7 +53,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-.bold-header {
+.bold-header, .lives {
 	font-family: 'Share Tech Mono', sans-serif;
 	padding: 1rem;
 }
@@ -66,13 +67,18 @@ body {
 /************* BACKGROUND COLORS *************/
 
 /* light background */
-.index-content, .portrait, .trivia, .expand > header:hover, .description {
+.index-content, .portrait, .trivia, .description {
 	background-color: #aacfd0;
 }
 
 /* dark background */
-.bold-header, .expand {
+.bold-header, .wrong-guesses {
 	background-color: #79a8a9;
+}
+
+/* white background */
+.game-window {
+	background-color: #fff;
 }
 
 
@@ -110,10 +116,6 @@ footer {
 footer p {
 	font-size: 0.8rem;
 	color: white;
-}
-
-@media all and (min-width: 650px) {
-
 }
 
 
@@ -176,6 +178,7 @@ ul.share-buttons .sr-only {
 }
 
 
+
 /************* GAME *************/
 
 .dark-overlay {
@@ -190,37 +193,37 @@ ul.share-buttons .sr-only {
 }
 
 .game-window {
-	background: white;
 	height: 80vh;
 	width: 50vw;
-	z-index: 1;
+	z-index: 2;
 	display: none;
 	flex-direction: column;
 }
 
 .word {
-	background: plum;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-grow: 1;
+	font-weight: bold;
 }
 
-.guessed-letters {
-	background: powderblue;
+.wrong-guesses {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-grow: 1;
+	text-decoration: line-through;
 }
 
 .gallows {
-	background: lightgreen;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-grow: 4;
+	flex-direction: column;
 }
+
 
 
 /************* ABOUT *************/
@@ -314,10 +317,6 @@ ul.share-buttons .sr-only {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-}
-
-.expand > header {
-	padding: 0.5rem;
 }
 
 .location {
