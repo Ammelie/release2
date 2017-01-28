@@ -14,8 +14,17 @@
           case 'resume.php':
             $page = 'resume.php';
             break;
+          case 'portfolio.php':
+            $page = 'portfolio.php';
+            break;
           case 'contact.php':
             $page = 'contact.php';
+            break;
+          case 'messages.php':
+            $page = 'messages.php';
+            break;
+          case 'admin.php':
+            $page = 'admin.php';
             break;
           default:
             $page = 'home.php';
@@ -26,26 +35,24 @@
         include('home.php');
       }
 
-      include('footer.php');
-
       if(isset($_GET['page'])) {
         switch ($_GET['page']) {
           case 'home.php':
-            echo '<script type="text/javascript" src="scripts/countdown.js"></script> <script type="text/javascript" src="scripts/hangman.js"></script>';
+            echo "<script type='text/javascript' src='scripts/countdown.js'></script> <script type='text/javascript' src='scripts/hangman.js'></script>";
             break;
           case 'resume.php':
-            echo '<script type="text/javascript" src="scripts/expand-experience.js"></script>';
+            echo "<script type='text/javascript' src='scripts/expand-experience.js'></script>";
             break;
           default:
             break;
         }
       } else {
-        echo '<script type="text/javascript" src="scripts/countdown.js"></script> <script type="text/javascript" src="scripts/hangman.js"></script>';
+        echo "<script type='text/javascript' src='scripts/countdown.js'></script> <script type='text/javascript' src='scripts/hangman.js'></script>";
       }
     ?>
 
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-582c6299ab931f5a"></script>
+    <script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-582c6299ab931f5a'></script>
   </body>
 </html>
