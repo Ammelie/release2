@@ -330,6 +330,11 @@ ul.share-buttons .sr-only {
 	padding: 1rem;
 }
 
+.remove-item {
+	margin: 0;
+	padding: 0;
+}
+
 @media all and (min-width: 650px) {
 .resume-header {
 	 display: flex;
@@ -340,6 +345,10 @@ ul.share-buttons .sr-only {
 
  .narrow {
 	 width: 60%;
+ }
+
+ .resume-form > * {
+	 width: 100%;
  }
 }
 
