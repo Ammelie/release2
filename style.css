@@ -251,6 +251,8 @@ ul.share-buttons .sr-only {
 	position: relative;
   top: 50%;
   transform: perspective(1px) translateY(-50%);
+	width: 90vw;
+	height: 50.62vw;
 }
 
 @media all and (min-width: 770px) {
@@ -267,6 +269,11 @@ ul.share-buttons .sr-only {
 
 	.video {
 		width: 60vw;
+	}
+
+	.video iframe {
+		width: 30vw;
+		height: 16.87vw;
 	}
 
 	.about-content {
