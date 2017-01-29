@@ -33,7 +33,7 @@ li {
 
 @media all and (min-width: 650px) {
 	.wrapper {
-		height: 90vh;
+		height: 95vh;
 	}
 }
 
@@ -356,6 +356,10 @@ ul.share-buttons .sr-only {
 	height: 30vh;
 }
 
+.thank-you {
+	margin-bottom: 0.5rem;
+}
+
 .contact-content {
 	display: flex;
 	justify-content: center;
@@ -383,44 +387,47 @@ input, textarea {
 }
 
 .btn {
-	float: right;
-	margin-right: 4px;
-	margin-bottom: 2rem;
+	text-align: center;
+	width: 100%;
 }
 
-@media all and (min-width: 650px) {
-.contact-header {
-	 display: flex;
-	 flex: 1;
-	 flex-direction: column;
-	 justify-content: center;
- }
+@media all and (min-width: 1000px) {
+	.contact-header {
+		 display: flex;
+		 flex: 1;
+		 flex-direction: column;
+		 justify-content: center;
+	 }
 
- .contact-content {
-	 height: 60vh;
- }
+	.contact-content {
+		height: 65vh;
+	}
 
- label, input, textarea {
- 	display: inline-block;
- 	text-align: left;
- }
+	label, input, textarea {
+		display: inline-block;
+		text-align: left;
+	}
 
- .btn {
-	 text-align: center;
- }
+	label {
+		width: 10vw;
+	}
 
- label {
-	 width: 10vw;
- }
+	input, textarea {
+		padding: 0.5rem;
+		width: 20vw;
+		margin-bottom: 1.5rem;
+	}
 
- input, textarea {
-	 padding: 0.5rem;
-	 width: 25vw;
-	 margin-bottom: 1.5rem;
- }
+	textarea {
+	 height: 15vh;
+	}
+}
 
- textarea {
- 	height: 15vh;
- }
 
+
+/************* ADMIN *************/
+.admin-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
