@@ -41,7 +41,7 @@
             echo "<script type='text/javascript' src='scripts/countdown.js'></script> <script type='text/javascript' src='scripts/hangman.js'></script>";
             break;
           case 'resume.php':
-            echo "<script type='text/javascript' src='scripts/expand-experience.js'></script>";
+            echo "<script type='text/javascript' src='scripts/resume.js'></script>";
             break;
           default:
             break;
