@@ -1,4 +1,4 @@
-// Runs dropdown function upon clicking a headline //
+// Runs dropdown function upon clicking a headline
 
 $(document).ready(function () {
   $(".expand").accordion({
