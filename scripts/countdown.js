@@ -11,7 +11,7 @@ $(document).ready(function addTimers() {
   $("#lia").html(timeToLIA);
   $("#graduation").html(timeToGraduation);
 
-  setTimeout(addTimers, 1000);
+  setTimeout(addTimers, 86400);
 });
 
 
@@ -26,7 +26,7 @@ function calculate(goal, start) {
   var hours = Math.floor(minutes/60);
   var days = Math.floor(hours/24);
   var weeks = Math.floor(days/7);
-  var months = Math.floor(weeks/4);
+  var months = Math.floor(days/30);
   var years = Math.floor(months/12);
 
   seconds %= 60;
