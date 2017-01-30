@@ -74,6 +74,11 @@ label {
 	background-color: #aacfd0;
 }
 
+/* very light background */
+tr:nth-child(odd) {
+	background-color: #cee3e4;
+}
+
 /* dark background */
 .bold-header, .wrong-guesses {
 	background-color: #79a8a9;
@@ -411,6 +416,49 @@ ul.share-buttons .sr-only {
 
 	.project-container img {
 		width: 30vw;
+}
+
+
+
+/************* MESSAGES *************/
+.messages-header-wrapper, .messages-content-wrapper {
+	display: flex;
+	flex-grow: 1;
+}
+
+.messages-content-wrapper {
+	flex-flow: row wrap;
+	justify-content: center;
+	/*overflow-x: scroll;*/
+}
+
+.messages-header {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+}
+
+table {
+	margin: 2rem;
+	/*border-collapse: collapse;*/
+}
+
+th, td {
+	padding: 0.5rem;
+}
+
+.messages p {
+	text-align: left;
+}
+
+@media all and (min-width: 650px) {
+	.messages-header {
+		height: 30vh;
+	}
+
+	.messages {
+		width: 40vw;
 	}
 }
 
