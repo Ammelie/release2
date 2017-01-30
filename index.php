@@ -8,6 +8,9 @@
 
       if(isset($_GET['page'])) {
         switch ($_GET['page']) {
+          case 'hangman.php':
+            $page = 'hangman.php';
+            break;
           case 'about.php':
             $page = 'about.php';
             break;
@@ -38,7 +41,10 @@
       if(isset($_GET['page'])) {
         switch ($_GET['page']) {
           case 'home.php':
-            echo "<script type='text/javascript' src='scripts/countdown.js'></script> <script type='text/javascript' src='scripts/hangman.js'></script>";
+            echo "<script type='text/javascript' src='scripts/countdown.js'></script> <script type='text/javascript' src='scripts/open-game.js'></script>";
+            break;
+          case 'hangman.php':
+            echo "<script type='text/javascript' src='scripts/hangman.js'></script>";
             break;
           case 'resume.php':
             echo "<script type='text/javascript' src='scripts/resume.js'></script>";
@@ -47,7 +53,7 @@
             break;
         }
       } else {
-        echo "<script type='text/javascript' src='scripts/countdown.js'></script> <script type='text/javascript' src='scripts/hangman.js'></script>";
+        echo "<script type='text/javascript' src='scripts/countdown.js'></script> <script type='text/javascript' src='scripts/open-game.js'></script>";
       }
     ?>
 

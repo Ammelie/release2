@@ -2,18 +2,6 @@
 
   echo "
     <div class='wrapper'>
-      <div class='dark-overlay' id='dark-overlay'>
-        <div class='game-window' id='game-window'>
-          <div class='game-title bold-header'><h2>Hangman</h2></div>
-          <div class='gallows'>
-            <h1 class='lives' id='lives'></h1>
-            <h2>lives left</h2>
-          </div>
-          <div class='word' id='word'></div>
-          <div class='wrong-guesses' id='wrong-guesses'></div>
-        </div>
-      </div>
-
       <div class='left'>
         <header class='index-header bold-header'>
           <h1>Ammelie Neth</h1>

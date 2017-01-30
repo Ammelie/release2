@@ -1,102 +1,37 @@
-var secret = "GOATUNHEIM";
-var input = "";
-var pos = 0;
-var gameRunning = false;
-
-
-
-//If game isn't already running, check user input against the easter egg password. If user types a wrong letter, start over from the beginning.
+//Game logic
 $(document).ready(function() {
-  console.log(secret);
+  //Set some variables
+  var wrong = "";
+  var lives = 10;
+  var solution = makeSolution();
+  var placeholder = makePlaceholder(solution);
 
+  //Show amount of lives
+  $("#lives").text(lives + " lives left");
 
+  //Game logic
   $(window).keyup(function(e) {
-    if (gameRunning === false) {
-      var key = String.fromCharCode(e.which);
-      key.toUpperCase();
+    var guess = String.fromCharCode(e.which);
+    guess.toUpperCase();
 
-      if (key == secret.charAt(pos)) {
-        input += key;
-        pos++;
-        checkSecret();
-      } else {
-        input = "";
-        pos = 0;
-      }
+    //If user is right, update the placeholder and check if they won.
+    //If user is wrong, display the wrong guess and lose a life. Check if they lost.
+    if (solution.includes(guess)) {
+      placeholder = updatePlaceholder(guess, solution, placeholder);
+      isGameOver(solution, placeholder, lives);
+    } else if (!(wrong.includes(guess))) {
+      wrong = updateGuesses(wrong, guess);
+      lives = updateLives(lives);
+      isGameOver(solution, placeholder, lives);
     }
   });
 });
 
 
 
-//When password is correct, reset things and run the game! If you're not there yet, do nothing.
-function checkSecret() {
-  if (input == secret) {
-    input = "";
-    pos = 0;
-
-    showGame();
-    hangman();
-  }
-}
-
-
-
-//Toggles game window.
-function showGame() {
-  $("#dark-overlay").css("display", "flex");
-  $("#game-window").css("display", "flex");
-  gameRunning = true;
-
-  $("#dark-overlay").click(function() {
-    $("#dark-overlay").css("display", "none");
-    $("#game-window").css("display", "none");
-    reset();
-  });
-}
-
-
-
-//Game logic
-function hangman() {
-  var wrong = "";
-  var lives = 5;
-  var solution = makeSolution();
-  var placeholder = makePlaceholder(solution);
-
-  $("#lives").text(lives);
-
-  $(window).keyup(function(e) {
-    if (gameRunning) {
-      var guess = String.fromCharCode(e.which);
-      guess.toUpperCase();
-
-      if (solution.includes(guess)) {
-        placeholder = updatePlaceholder(guess, solution, placeholder);
-        isGameOver(solution, placeholder, lives);
-      } else if (!(wrong.includes(guess))) {
-        wrong = updateGuesses(wrong, guess);
-        lives = updateLives(lives);
-        isGameOver(solution, placeholder, lives);
-      }
-    }
-  });
-}
-
-
-
-//Resets some things when game's closed
-function reset() {
-  gameRunning = false;
-  $("#word").text("");
-  $("#wrong-guesses").text("");
-}
-
-
-
 //Selects a word from an array, so the game can be played with several solutions.
 function makeSolution () {
-  var solutions = ["SUPERCALIFRAGILISTICEXPIALIDOCIOUS", "SESQUIPEDALIANISM", "HIPPOPOTOMONSTROSESQUIPEDALIOPHOBIA", "BARDOLATRY", "BLATHERSKITE"];
+  var solutions = ["BULBASAUR", "IVYSAUR", "VENUSAUR", "CHARMANDER", "CHARMELEON", "CHARIZARD", "SQUIRTLE", "WARTORTLE", "BLASTOISE", "CATERPIE", "METAPOD", "BUTTERFREE", "WEEDLE", "KAKUNA", "BEEDRILL", "PIDGEY", "PIDGEOTTO", "PIDGEOT", "RATTATA", "RATICATE", "SPEAROW", "FEAROW", "EKANS", "ARBOK", "PIKACHU", "RAICHU", "RAICHU", "SANDSHREW", "SANDSLASH", "NIDORAN", "NIDORINA", "NIDOQUEEN", "NIDORINO", "NIDOKING", "CLEFAIRY", "CLEFABLE", "VULPIX", "NINETALES", "JIGGLYPUFF", "WIGGLYTUFF", "ZUBAT", "GOLBAT", "ODDISH", "GLOOM", "VILEPLUME", "PARAS", "PARASECT", "VENONAT", "VENOMOTH", "DIGLETT", "DUGTRIO", "MEOWTH", "PERSIAN", "PSYDUCK", "GOLDUCK", "MANKEY", "PRIMEAPE", "GROWLITHE", "ARCANINE", "POLIWAG", "POLIWHIRL", "POLIWRATH", "ABRA", "KADABRA", "ALAKAZAM", "MACHOP", "MACHOKE", "MACHAMP", "BELLSPROUT", "WEEPINBELL", "VICTREEBEL", "TENTACOOL", "TENTACRUEL", "GEODUDE", "GRAVELER", "GOLEM", "PONYTA", "RAPIDASH", "SLOWPOKE", "SLOWBRO", "MAGNEMITE", "MAGNETON", "FARFETCHD", "DODUO", "DODRIO", "SEEL", "DEWGONG", "GRIMER", "MUK", "SHELLDER", "CLOYSTER", "GASTLY", "HAUNTER", "GENGAR", "ONIX", "DROWZEE", "HYPNO", "KRABBY", "KINGLER", "VOLTORB", "ELECTRODE", "EXEGGCUTE", "EXEGGUTOR", "CUBONE", "MAROWAK", "HITMONLEE", "HITMONCHAN", "LICKITUNG", "KOFFING", "WEEZING", "RHYHORN", "RHYDON", "CHANSEY", "TANGELA", "KANGASKHAN", "HORSEA", "SEADRA", "GOLDEEN", "SEAKING", "STARYU", "STARMIE", "MR MIME", "SCYTHER", "JYNX", "ELECTABUZZ", "MAGMAR", "PINSIR", "TAUROS", "MAGIKARP", "GYARADOS", "LAPRAS", "DITTO", "EEVEE", "VAPOREON", "JOLTEON", "FLAREON", "PORYGON", "OMANYTE", "OMASTAR", "KABUTO", "KABUTOPS", "AERODACTYL", "SNORLAX", "ARTICUNO", "ZAPDOS", "MOLTRES", "DRATINI", "DRAGONAIR", "DRAGONITE", "MEWTWO", "MEW"];
   var solution = solutions[Math.floor(Math.random() * solutions.length)];
 
   return solution;
@@ -142,11 +77,11 @@ function updateGuesses(wrong, guess) {
 }
 
 
-
+//Update amount of lives when one is lost
 function updateLives(lives) {
   lives -= 1;
-  $("#lives").text(lives);
-  
+  $("#lives").text(lives + " lives left!");
+
   return lives;
 }
 
@@ -155,9 +90,8 @@ function updateLives(lives) {
 function isGameOver(solution, placeholder, lives) {
   if (placeholder == solution) {
     alert("You won!");
-    reset();
   } else if (lives <= 0) {
     alert("You lost!");
-    reset();
+    $("#word").text(solution);
   }
 }

@@ -58,7 +58,7 @@ body {
 	padding: 1rem;
 }
 
-.countdown p {
+.countdown p, .word, .wrong-guesses {
 	font-size: 1.7rem;
 }
 
@@ -80,13 +80,8 @@ tr:nth-child(odd) {
 }
 
 /* dark background */
-.bold-header, .wrong-guesses {
+.bold-header {
 	background-color: #79a8a9;
-}
-
-/* white background */
-.game-window {
-	background-color: #fff;
 }
 
 
@@ -188,48 +183,39 @@ ul.share-buttons .sr-only {
 
 
 /************* GAME *************/
-
-.dark-overlay {
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	background: rgba(0, 0, 0, 0.8);
-	height: 100vh;
-	width: 100vw;
-	z-index: 1;
-	display: none;
+.hangman-header-wrapper, .hangman-content-wrapper {
+	display: flex;
+	flex-grow: 1;
 }
 
-.game-window {
-	height: 80vh;
-	width: 50vw;
-	z-index: 2;
-	display: none;
+.hangman-content-wrapper {
+	flex-flow: column wrap;
+	justify-content: center;
+}
+
+.hangman-header {
+	display: flex;
+	flex: 1;
 	flex-direction: column;
+	justify-content: center;
+}
+
+.word, .wrong-guesses {
+	margin-top: 1rem;
 }
 
 .word {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 1;
-	font-weight: bold;
+	font-weight: bold;*/
 }
 
 .wrong-guesses {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 1;
 	text-decoration: line-through;
 }
 
-.gallows {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 4;
-	flex-direction: column;
+@media all and (min-width: 650px) {
+	.hangman-header {
+		height: 30vh;
+	}
 }
 
 
