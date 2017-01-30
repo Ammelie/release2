@@ -28,7 +28,7 @@
 
     mysqli_query($db, $query);
 
-    echo "<h2 class'thank-you'>Thank you for your message!</h2>";
+    echo "<div class='thank-you'><h2>Thank you for your message!</h2></div>";
   }
 
 
