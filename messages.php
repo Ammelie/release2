@@ -1,34 +1,28 @@
 <?php
-session_start();
-include('config.php');
+  session_start();
+  include('config.php');
 
-  echo "
-    <div class='messages-header-wrapper'>
-      <header class='messages-header bold-header'>
-        <h1>Messages</h1>
-      </header>
-    </div>
+  if(isset($_SESSION['admin'])) {
+    echo "
+      <div class='messages-header-wrapper'>
+        <header class='messages-header bold-header'>
+          <h1>Messages</h1>
+        </header>
+      </div>
 
-    <div class='messages-content-wrapper'>
-      <table>
-        <tr>
-          <th>Date</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Message</th>
-        </tr>
-  ";
+      <div class='messages-content-wrapper'>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+            <th>Captain</th>
+          </tr>
+    ";
 
-  get_messages($db);
-
-  echo "
-    </div>
-  ";
-
-
-
-  function get_messages($db) {
+    # Get all messages and display them in table rows
     $query = 'SELECT * FROM messages ORDER BY id DESC';
     $result = mysqli_query($db, $query);
 
@@ -40,8 +34,14 @@ include('config.php');
           <td>{$message['email']}</td>
           <td>{$message['phone']}</td>
           <td>{$message['message']}</td>
+          <td>{$message['captain']}</td>
         </tr>
       ";
     }
+
+    echo "</div>";
+  } else {
+    header("Location: http://www.ammelieneth.se");
   }
+
 ?>
