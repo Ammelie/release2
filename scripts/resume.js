@@ -1,5 +1,4 @@
-// Runs dropdown function upon clicking a headline
-
+//Make CV headers (which have a class expand) collapsible accordions
 $(document).ready(function () {
   $(".expand").accordion({
     collapsible: true,

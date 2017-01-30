@@ -1,15 +1,18 @@
+//Set some variables
 var secret = "GOATUNHEIM";
 var input = "";
 var pos = 0;
 
-//Check user input against the easter egg password. If user types a wrong letter, start over from the beginning.
+
 $(document).ready(function() {
   console.log(secret);
 
+    //Take user input and format it
   $(window).keyup(function(e) {
     var key = String.fromCharCode(e.which);
     key.toUpperCase();
 
+    //Check user input against the easter egg password. If user types a wrong letter, start over from the beginning.
     if (key == secret.charAt(pos)) {
       input += key;
       pos++;

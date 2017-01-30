@@ -1,5 +1,4 @@
 // Runs calculate for both dates and places the resulting timers on the index page
-
 $(document).ready(function addTimers() {
   var now = new Date();
   var liaDate = new Date("2018-01-15 09:00:00");
@@ -15,9 +14,7 @@ $(document).ready(function addTimers() {
 });
 
 
-
 // Calculates time left and returns a countdown
-
 function calculate(goal, start) {
   var timeLeft = (goal.getTime() - start.getTime());
 

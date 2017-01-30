@@ -1,4 +1,3 @@
-//Game logic
 $(document).ready(function() {
   //Set some variables
   var wrong = "";
@@ -9,7 +8,7 @@ $(document).ready(function() {
   //Show amount of lives
   $("#lives").text(lives + " lives left");
 
-  //Game logic
+  //Take user input and format it
   $(window).keyup(function(e) {
     var guess = String.fromCharCode(e.which);
     guess.toUpperCase();
@@ -29,7 +28,7 @@ $(document).ready(function() {
 
 
 
-//Selects a word from an array, so the game can be played with several solutions.
+//Select a word from an array, so the game can be played with several solutions.
 function makeSolution () {
   var solutions = ["BULBASAUR", "IVYSAUR", "VENUSAUR", "CHARMANDER", "CHARMELEON", "CHARIZARD", "SQUIRTLE", "WARTORTLE", "BLASTOISE", "CATERPIE", "METAPOD", "BUTTERFREE", "WEEDLE", "KAKUNA", "BEEDRILL", "PIDGEY", "PIDGEOTTO", "PIDGEOT", "RATTATA", "RATICATE", "SPEAROW", "FEAROW", "EKANS", "ARBOK", "PIKACHU", "RAICHU", "RAICHU", "SANDSHREW", "SANDSLASH", "NIDORAN", "NIDORINA", "NIDOQUEEN", "NIDORINO", "NIDOKING", "CLEFAIRY", "CLEFABLE", "VULPIX", "NINETALES", "JIGGLYPUFF", "WIGGLYTUFF", "ZUBAT", "GOLBAT", "ODDISH", "GLOOM", "VILEPLUME", "PARAS", "PARASECT", "VENONAT", "VENOMOTH", "DIGLETT", "DUGTRIO", "MEOWTH", "PERSIAN", "PSYDUCK", "GOLDUCK", "MANKEY", "PRIMEAPE", "GROWLITHE", "ARCANINE", "POLIWAG", "POLIWHIRL", "POLIWRATH", "ABRA", "KADABRA", "ALAKAZAM", "MACHOP", "MACHOKE", "MACHAMP", "BELLSPROUT", "WEEPINBELL", "VICTREEBEL", "TENTACOOL", "TENTACRUEL", "GEODUDE", "GRAVELER", "GOLEM", "PONYTA", "RAPIDASH", "SLOWPOKE", "SLOWBRO", "MAGNEMITE", "MAGNETON", "FARFETCHD", "DODUO", "DODRIO", "SEEL", "DEWGONG", "GRIMER", "MUK", "SHELLDER", "CLOYSTER", "GASTLY", "HAUNTER", "GENGAR", "ONIX", "DROWZEE", "HYPNO", "KRABBY", "KINGLER", "VOLTORB", "ELECTRODE", "EXEGGCUTE", "EXEGGUTOR", "CUBONE", "MAROWAK", "HITMONLEE", "HITMONCHAN", "LICKITUNG", "KOFFING", "WEEZING", "RHYHORN", "RHYDON", "CHANSEY", "TANGELA", "KANGASKHAN", "HORSEA", "SEADRA", "GOLDEEN", "SEAKING", "STARYU", "STARMIE", "MR MIME", "SCYTHER", "JYNX", "ELECTABUZZ", "MAGMAR", "PINSIR", "TAUROS", "MAGIKARP", "GYARADOS", "LAPRAS", "DITTO", "EEVEE", "VAPOREON", "JOLTEON", "FLAREON", "PORYGON", "OMANYTE", "OMASTAR", "KABUTO", "KABUTOPS", "AERODACTYL", "SNORLAX", "ARTICUNO", "ZAPDOS", "MOLTRES", "DRATINI", "DRAGONAIR", "DRAGONITE", "MEWTWO", "MEW"];
   var solution = solutions[Math.floor(Math.random() * solutions.length)];
@@ -54,7 +53,7 @@ function makePlaceholder(solution) {
 
 
 
-//Updates the placeholder when player guesses a letter that's in the word.
+//Update the placeholder when player guesses a letter that's in the word.
 function updatePlaceholder(guess, solution, placeholder) {
   for (i = 0; i < solution.length; i++) {
     if (guess == solution.charAt(i)) {
@@ -68,7 +67,7 @@ function updatePlaceholder(guess, solution, placeholder) {
 
 
 
-//Updates the list of wrong guesses when player makes a wrong guess.
+//Update the list of wrong guesses when player makes a wrong guess.
 function updateGuesses(wrong, guess) {
   wrong += guess;
   $("#wrong-guesses").text(wrong);

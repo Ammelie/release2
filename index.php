@@ -6,6 +6,7 @@
     <?php
       include('nav.php');
 
+      # Display different content depending on URL
       if(isset($_GET['page'])) {
         switch ($_GET['page']) {
           case 'hangman.php':
@@ -38,6 +39,8 @@
         include('home.php');
       }
 
+
+      # Include different scripts depending on URL
       if(isset($_GET['page'])) {
         switch ($_GET['page']) {
           case 'home.php':
@@ -57,7 +60,7 @@
       }
     ?>
 
-
+    <!-- This is a share button widget  -->
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-582c6299ab931f5a'></script>
   </body>
